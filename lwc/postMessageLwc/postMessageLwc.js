@@ -5,14 +5,6 @@ export default class PostMessageLwc extends LightningElement {
 
   // Connect message handler when component is loaded
   connectedCallback() {
-
-    window.addEventListener("message", (event) => {
-      // verify origin
-      if (event.origin !== "https://forcetrails-dev-ed--c.vf.force.com") {
-        console.log("data", event.data);
-      }
-    }, false);
-
     this.messageHandler = this.handleMessage.bind(this);
     this.addMessageHandler();
   }
