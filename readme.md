@@ -12,7 +12,7 @@ Ensures secure communication by specifying the target origin for messages.
 
 - Clone this repository.
 
-- Review the code within the src directory. The LWC component (`lwc/lwcComponent/lwcComponent.js`) showcases the communication logic.
+- Review the code within the src directory. The LWC component (`lwc/postMessageLwc/postMessageLwc.js`) showcases the communication logic.
 - Adapt the code to your specific needs, including the iframe content and the messages you want to exchange.
 
 # Security:
