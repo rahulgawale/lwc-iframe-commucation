@@ -1,0 +1,22 @@
+<template>
+  <lightning-card variant="narrow">
+    <div slot="title">
+      Window.postMessage() between iframe and LWC
+    </div>
+    <div>
+
+      <div class="slds-var-p-around_x-small">
+        <lightning-button
+          variant="brand"
+          label="Send Message to iframe"
+          onclick={handleSendMessage}
+        ></lightning-button>
+      </div>
+
+      <div class="slds-var-p-around_x-small">
+        <iframe src="https://forcetrails-dev-ed--c.vf.force.com/apex/postMessaageVf"></iframe>
+      </div>
+
+    </div>
+  </lightning-card>
+</template>

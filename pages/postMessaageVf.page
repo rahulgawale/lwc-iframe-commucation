@@ -1,0 +1,74 @@
+<apex:page
+  showHeader="false"
+  standardStylesheets="false"
+  sidebar="false"
+  applyHtmlTag="false"
+  applyBodyTag="false"
+  docType="html-5.0"
+>
+
+  <html
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    lang="en"
+  >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="x-ua-compatible"
+      content="ie=edge"
+    />
+    <title>Window.postMessage() Example</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <!-- Import the Design System style sheet -->
+    <apex:slds />
+
+
+    <script>
+      // Lightning origin where the LWC Component is hosted
+      const LIGHTNING_ORIGIN = "https://forcetrails-dev-ed.lightning.force.com";
+
+      // Post message from VF page to LWC
+      function postMessageToLWC() {
+        window.parent.postMessage(parseInt(Math.random() * 10, 10), LIGHTNING_ORIGIN);
+        console.log("📃 VF: Message sent");
+      }
+
+      //  handle incoming message from LWC
+      window.addEventListener(
+        "message",
+        (event) => {
+          console.log("📃 VF:in vf event handler");
+          //  change the origin according to you
+          if (event.origin !== LIGHTNING_ORIGIN) return;
+
+          alert("📃 VF: Message from LWC: " + JSON.stringify(event.data))
+        },
+        false,
+      );
+    </script>
+  </head>
+
+  <body>
+    <div class="slds-scope">
+      <div class="myapp">
+        Visualforce Page
+        <div class="slds-grid slds-wrap">
+          <div class="slds-col slds-size--1-of-1 slds-small-size--1-of-2 slds-medium-size--1-of-4">
+            <button
+              class="slds-button slds-button_brand"
+              onclick="postMessageToLWC()"
+            >Post To LWC</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  </html>
+</apex:page>
