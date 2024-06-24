@@ -1,7 +1,7 @@
-# LWC Iframe Communication (Secure Messaging)
+# [LWC Iframe Communication (Secure Messaging)](https://www.forcetrails.com/2024/06/secure-communication-between-lwc-and.html)
 This repository demonstrates secure communication between Lightning Web Components (LWC) and iframes embedded within them.
 
-I have explained the code sample in detail in this blog post:[]()
+I have explained the code sample in detail in this blog post:[Secure communication between LWC and iFrame using window.postMessage()](https://www.forcetrails.com/2024/06/secure-communication-between-lwc-and.html)
 
 # Functionality:
 
